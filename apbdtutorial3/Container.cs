@@ -6,7 +6,7 @@ public class Container
     public string SerialNumber { get; }
     public double MaxPayload { get; protected set; }
     public double TareWeight { get; protected set; }
-    public double CargoMass { get; private set; }
+    public double CargoMass { get; protected set; }
     public double Height { get; set; }
     public double Depth { get; set; }
     public string ProductType { get; protected set; }
