@@ -21,4 +21,17 @@ public class Container
         Depth = depth;
         CargoMass = 0;
     }
+    public virtual void LoadCargo(double mass)
+    {
+        if (CargoMass + mass > MaxPayload)
+        {
+            throw new OverfillException("Too much mass for overfill");
+        }
+        CargoMass += mass;
+    }
+
+    public virtual void EmptyCargo()
+    {
+        CargoMass = 0;
+    }
 }
