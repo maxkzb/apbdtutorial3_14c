@@ -13,4 +13,9 @@ public class RefrigeratedContainer : Container, IHazardNotifier
     {
         Console.WriteLine($"{message} In container: {SerialNumber}");
     }
+
+    public override void PrintCargo()
+    {
+        Console.WriteLine($"Product Type: {ProductType}, Temperature: {Temperature}°C");
+    }
 }

@@ -34,4 +34,9 @@ public class Container
     {
         CargoMass = 0;
     }
+
+    public virtual void PrintCargo()
+    {
+        Console.WriteLine($"Container {SerialNumber}: Tare {TareWeight} kg, Cargo {CargoMass} kg, Max Payload {MaxPayload} kg");
+    }
 }
