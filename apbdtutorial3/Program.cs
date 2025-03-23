@@ -4,10 +4,10 @@ class Program
 {
     static void Main()
     {
-        ContainerShip ship1 = new ContainerShip("Poseidon", 30, 5, 5);
-        ContainerShip ship2 = new ContainerShip("Neptune", 25, 5, 6);
+        ContainerShip ship1 = new ContainerShip("Syrenka", 30, 5, 5000);
+        ContainerShip ship2 = new ContainerShip("Laguna", 25, 5, 6000);
         
-        RefrigeratedContainer bananaContainer = new RefrigeratedContainer(300, 1000, 250, 200, "Bananas", 5);
+        RefrigeratedContainer bananaContainer = new RefrigeratedContainer(300, 1000, 250, 200, "Bananas", 13);
         LiquidContainer milkContainer = new LiquidContainer(250, 1200, false);
         GasContainer heliumContainer = new GasContainer(200, 800, 50);
         LiquidContainer fuelContainer = new LiquidContainer(270, 1100, true);
@@ -17,7 +17,7 @@ class Program
             bananaContainer.LoadCargo(900);
             milkContainer.LoadCargo(1000);
             heliumContainer.LoadCargo(700);
-            fuelContainer.LoadCargo(500); // Should throw exception if exceeding 50% capacity
+            fuelContainer.LoadCargo(500);
         }
         catch (OverfillException ex)
         {
@@ -46,7 +46,7 @@ class Program
         ship1.PrintShipInfo();
         
         ContainerShip.TransferContainer(ship1, ship2, heliumContainer.SerialNumber);
-        Console.WriteLine("Helium container transferred to another ship.");
+        Console.WriteLine("Helium container transferred from ship1 to ship2.");
         ship1.PrintShipInfo();
         ship2.PrintShipInfo();
     }
